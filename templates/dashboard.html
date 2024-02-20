@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ... (head code) ... -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/static/assets/img/favicon.png" rel="icon">
+    <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .graph {
+            margin-top: 60px;
+        }
+    </style>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: FlexStart
+  * Updated: Jan 09 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body style="margin-top: 40px;">
+    {% with messages = get_flashed_messages()%}
+    {%if messages%}
+    {% for mesaages in messages%}
+    <p>{{messages}}</p>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+    <!-- Header section -->
+    <!-- ... (header code) ... -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="/home" class="logo d-flex align-items-center">
+                <img src="/static/assets/img/logo.png" alt="">
+                <span>MY DUKA</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="/home">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/products">Products</a></li>
+                    <li><a class="nav-link scrollto" href="/sales">Sales</a></li>
+                    <li><a class="nav-link scrollto" href="/dashboard">Dashboard</a></li>
+
+
+                    <li><a class="nav-link scrollto" href="/login">Login</a></li>
+                    <li><a class="getstarted scrollto" href="/register">Register</a></li>
+                    <li><a class="nav-link scrollto" href="/home"><button type="button"
+                                class="btn btn-primary position-relative">
+                                Inbox
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    99+
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </button></a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- Main content container -->
+    <div class="container-fluid">
+        <!-- Graphs section -->
+        <section class="graphs">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <canvas id="line-chart" width="600" height="150"></canvas>
+                            </div>
+                            <div class="col-lg-3">
+                                <img width="430" height="500" src="/static/photos/business-growth-graph.jpg" alt="">
+
+                            </div>
+                            <div class="col-lg-9">
+                                <canvas id="bar-chart" width="600" height="150"></canvas>
+                            </div>
+                            <div class="col-lg-3">
+                                <video width="420" height="200" autoplay muted>
+                                    <source src="/static/video/my ad.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="col-lg-12">
+                                <h3 style="margin-left: 520px;margin-top: 50px;"><strong>MY TOTAL PROFITS</strong></h3>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Product Id</th>
+                                            <th>Total Profit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for t in prof %}
+                                        <tr>
+                                            <td>{{ t[0] }}</td>
+                                            <td>{{ t[1] }}</td>
+                                            <td>{{ t[2] }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <!-- Footer section -->
+    <!-- ... (footer code) ... -->
+    <footer id="footer" class="footer">
+
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 text-center">
+                        <h4>Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-info">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <img src="/static/assets/img/logo.png" alt="">
+                            <span>FlexStart</span>
+                        </a>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
+                            valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <div class="social-links mt-3">
+                            <a href="https://twitter.com/home" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>MY DUKA</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+                Designed by <a href="https://bootstrapmade.com/">Tony Kanyi</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+
+    <!-- Chart scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Bar chart script goes here
+        new Chart(document.getElementById("bar-chart"), {
+            type: 'bar',
+            data: {
+                labels: {{ productss| safe }},
+            datasets: [{
+                label: "Population (millions)",
+                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                data: {{ total_saless| safe }},
+                }]
+            },
+            options: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+            }
+        }
+        });
+
+        // Line chart script goes here
+        new Chart(document.getElementById("line-chart"), {
+            type: 'line',
+            data: {
+                labels: {{ saless | safe }},
+            datasets: [{
+                data: {{ mauzo_date | safe }},
+            label: "Total Sales",
+            borderColor: "#3e95cd",
+            fill: false
+                }]
+            },
+            options: {
+            title: {
+                display: true,
+                text: 'Sales information per day'
+            }
+        }
+        });
+    </script>
+    <script>
+        new Chart(document.getElementById("doughnut-chart"), {
+            type: 'doughnut',
+            data: {
+                labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                datasets: [
+                    {
+                        label: "Population (millions)",
+                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                        data: [2478, 5267, 734, 784, 433]
+                    }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Predicted world population (millions) in 2050'
+                }
+            }
+        });
+    </script>
+    <script>
+        new Chart(document.getElementById("radar-chart"), {
+            type: 'radar',
+            data: {
+                labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                datasets: [
+                    {
+                        label: "1950",
+                        fill: true,
+                        backgroundColor: "rgba(179,181,198,0.2)",
+                        borderColor: "rgba(179,181,198,1)",
+                        pointBorderColor: "#fff",
+                        pointBackgroundColor: "rgba(179,181,198,1)",
+                        data: [8.77, 55.61, 21.69, 6.62, 6.82]
+                    }, {
+                        label: "2050",
+                        fill: true,
+                        backgroundColor: "rgba(255,99,132,0.2)",
+                        borderColor: "rgba(255,99,132,1)",
+                        pointBorderColor: "#fff",
+                        pointBackgroundColor: "rgba(255,99,132,1)",
+                        pointBorderColor: "#fff",
+                        data: [25.48, 54.16, 7.61, 8.06, 4.45]
+                    }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Distribution in % of world population'
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
