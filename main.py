@@ -1,7 +1,9 @@
 from flask import Flask, render_template ,redirect,request,flash,session
 import psycopg2
 from mydb import check_email_password ,sale_info,sales_date
-from flask_login import LoginManager,login_required,current_user
+from flask_login import LoginManager,UserMixin,login_required,login_user,current_user
+
+
 
 hostname = "localhost"
 database = "myduka_db"
@@ -20,38 +22,29 @@ cur = conn.cursor()
 
 app = Flask(__name__)
 
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view="login"
-# login_manager = LoginManager(app)
-
 app.secret_key= "TonyKanyi"
 
+login_manager = LoginManager(app)
+login_manager.login_view='login'
 
-
-# class User:
-#     def __init__(self, user_id):
-#         self.id = user_id
-
-#     def is_authenticated(self):
-#         # Implement your logic for user authentication
-#         return True  # For demonstration purposes; replace with your own logic
-#     @login_manager.user_loader
-#     def load_user(user_id):
-#     # Replace this with your logic to load a user from the database
-#      return User(user_id)
-def load_user(user_id):
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE id = %s", (user_id,))
-    user = cursor.fetchone()
-    cursor.close()
-    return user
+ 
+class User(UserMixin):
+    def __init__(self, user_id,email,password):
+        self.id = user_id
+        self.email=email
+        self.password=password
 
 @login_manager.user_loader
 def load_user(user_id):
-    return load_user (user_id)
+    cur.execute("SELECT * FROM users WHERE id = %s", (user_id,))
+    user_data = cur.fetchone()
 
+    if user_data:
+        # Create a User object based on the database data
+        user = User(user_data[0], user_data[1], user_data[2])
+        return user
 
+    return None  # Return None if the user is not found
 
 @app.route("/")
 def hello():
@@ -88,7 +81,7 @@ def my_products():
     return render_template("products.html")
 
 @app.route("/sales")
-# @login_required
+@login_required
 def sales():
     cur.execute('''SELECT sales.id,products.name,sales.created_at,sum(sales.quantity *products.selling_price)as my_sale
 from sales
@@ -138,18 +131,32 @@ def register():
 def login():
     if request.method=="POST":
         email =request.form['email']
-        password =request.form['password']        
-        account =check_email_password(email,password)
-        if account:
-            flash("You are successfully login")
-            print(current_user.is_authenticated)
+        password =request.form['password']  
+        cur.execute("SELECT * FROM users WHERE email = %s AND passwords = %s", (email, password))
+        user_data = cur.fetchone()
+        if user_data:
+            user = load_user(user_data[0])
+            login_user(user)
+            flash("You are successfully logged in", 'success')
             return redirect('/dashboard')
-        
         else:
-            flash("invalid password")
-            return redirect('/register')
-        
+            flash("Invalid email or password", 'danger')
+            return redirect('/login')
+
     return render_template('login.html')
+ 
+    #     # print(f"Attempting login with email: {email}, password: {password}")     
+    #     account =check_email_password(email,password)
+    #     # print(f"Login result: {account}")
+    #     if account:
+    #         flash("You are successfully login")
+    #         return redirect('/dashboard')
+        
+    #     else:
+    #         flash("invalid password")
+    #         return redirect('/register')
+        
+    # return render_template('login.html')
 
 
 @app.route('/dashboard')

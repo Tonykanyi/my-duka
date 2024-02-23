@@ -73,6 +73,11 @@
     {%endfor%}
     {%endif%}
     {%endwith%}
+
+
+    {% if current_user.is_authenticated %}
+    Hi {{ current_user.name }}!
+    {% endif %}
     <!-- Header section -->
     <!-- ... (header code) ... -->
     <header id="header" class="header fixed-top">
