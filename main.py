@@ -183,7 +183,7 @@ def dashboard():
         # user = load_user(user_id)
         # print(current_user.is_authenticated)
 
-    return render_template('dashboard.html',productss=productss,total_saless=total_saless,saless=saless,mauzo_date=mauzo_date,prof=prof)
+    return render_template('newdash.html',productss=productss,total_saless=total_saless,saless=saless,mauzo_date=mauzo_date,prof=prof)
 
 
 conn.commit()            

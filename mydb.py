@@ -51,7 +51,7 @@ def check_email_password(email,password):
 	              WHERE email =%s AND passwords =%s;'''
         cur.execute(query,(email,password))
         result =cur.fetchone()
-        if result is not None:
+        if result:
               id=result[0]
               name=result[1]
               return id,name
