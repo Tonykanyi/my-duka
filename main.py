@@ -1,7 +1,7 @@
 from flask import Flask, render_template ,redirect,request,flash,session
 import psycopg2
 from mydb import check_email_password ,sale_info,sales_date
-from flask_login import LoginManager,UserMixin,login_required,login_user,current_user
+from flask_login import LoginManager,UserMixin,login_required,login_user,current_user,logout_user
 
 
 
@@ -55,7 +55,7 @@ def home():
     return render_template("index.html")
 
 @app.route("/products")
-# @login_required
+@login_required
 def products():
     cur.execute('select * from products')
     prods=cur.fetchall()
@@ -185,6 +185,10 @@ def dashboard():
 
     return render_template('newdash.html',productss=productss,total_saless=total_saless,saless=saless,mauzo_date=mauzo_date,prof=prof)
 
+@app.route("/logout")
+def logout():
+    logout_user()
+    return render_template("main.html")
 
 conn.commit()            
 

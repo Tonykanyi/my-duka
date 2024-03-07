@@ -75,7 +75,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"  >MY DUKA</div>
+                <div class="sidebar-brand-text mx-3">MY DUKA</div>
             </a>
 
             <!-- Divider -->
@@ -122,7 +122,7 @@
                 Addons
             </div>
 
-        
+
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
@@ -146,7 +146,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-           
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -335,20 +335,8 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -517,7 +505,7 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
+                                        <canvas id="line-chart" width="600" height="150"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
                                         <span class="mr-2">
@@ -539,7 +527,7 @@
                     <div class="row">
 
                         <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
+                        <div class="col-lg-12 mb-4">
 
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
@@ -568,226 +556,162 @@
                                 </div>
                             </div>
 
-                            <!-- Color System -->
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-primary text-white shadow">
-                                        <div class="card-body">
-                                            Primary
-                                            <div class="text-white-50 small">#4e73df</div>
-                                        </div>
+
+
+                            <!-- Footer -->
+                            <footer class="sticky-footer bg-white">
+                                <div class="container my-auto">
+                                    <div class="copyright text-center my-auto">
+                                        <span>Copyright &copy; Your Website 2021</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Success
-                                            <div class="text-white-50 small">#1cc88a</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-info text-white shadow">
-                                        <div class="card-body">
-                                            Info
-                                            <div class="text-white-50 small">#36b9cc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-warning text-white shadow">
-                                        <div class="card-body">
-                                            Warning
-                                            <div class="text-white-50 small">#f6c23e</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Danger
-                                            <div class="text-white-50 small">#e74a3b</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-secondary text-white shadow">
-                                        <div class="card-body">
-                                            Secondary
-                                            <div class="text-white-50 small">#858796</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-light text-black shadow">
-                                        <div class="card-body">
-                                            Light
-                                            <div class="text-black-50 small">#f8f9fc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-dark text-white shadow">
-                                        <div class="card-body">
-                                            Dark
-                                            <div class="text-white-50 small">#5a5c69</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </footer>
+                            <!-- End of Footer -->
 
                         </div>
+                        <!-- End of Content Wrapper -->
 
-                        <div class="col-lg-6 mb-4">
+                    </div>
+                    <!-- End of Page Wrapper -->
 
-                            <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="/static/startup/img/undraw_posting_photo.svg" alt="...">
-                                    </div>
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a
-                                            target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                        constantly updated collection of beautiful svg images that you can use
-                                        completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                                        unDraw &rarr;</a>
-                                </div>
-                            </div>
+                    <!-- Scroll to Top Button-->
+                    <a class="scroll-to-top rounded" href="#page-top">
+                        <i class="fas fa-angle-up"></i>
+                    </a>
 
-                            <!-- Approach -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+                    <!-- Logout Modal-->
+                    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
                                 </div>
-                                <div class="card-body">
-                                    <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                                        CSS bloat and poor page performance. Custom CSS classes are used to create
-                                        custom components and custom utility classes.</p>
-                                    <p class="mb-0">Before working with this theme, you should become familiar with the
-                                        Bootstrap framework, especially the utility classes.</p>
+                                <div class="modal-body">Select "Logout" below if you are ready to end your current
+                                    session.</div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                    <a class="btn btn-primary" href="/logout">Logout</a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
-                </div>
-                <!-- /.container-fluid -->
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            // Your Chart.js code here
 
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Your Chart.js code here
-
-            var ctx = document.getElementById('bar-chart').getContext('2d');
-            // ... rest of your code ...
-            var chartData = {
-                labels: {{ productss| safe
-        }},
-            datasets: [{
-                label: '# of Votes',
-                data: {{ total_saless| safe }},
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 255, 0, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 165, 0, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 255, 0, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 165, 0, 1)'
-            ],
-            borderWidth: 1
+                            var ctx = document.getElementById('bar-chart').getContext('2d');
+                            // ... rest of your code ...
+                            var chartData = {
+                                labels: {{ productss| safe
+                        }},
+                            datasets: [{
+                                label: '# of Votes',
+                                data: {{ total_saless| safe }},
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 255, 0, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 165, 0, 0.2)',
+                                'rgba(255, 100, 132, 0.2)',
+                                'rgba(54, 162, 35, 0.2)',
+                                'rgba(255, 255, 50, 0.2)',
+                                'rgba(75, 192, 2, 0.2)',
+                                'rgba(153, 102,55, 0.2)',
+                                'rgba(255, 165, 10, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 32, 1)',
+                                'rgba(54, 162, 239, 1)',
+                                'rgba(255, 255,80, 1)',
+                                'rgba(75, 192, 092, 1)',
+                                'rgba(153, 102, 55, 1)',
+                                'rgba(255, 165, 30, 1)',
+                                'rgba(255, 99, 52, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 255, 0, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 165, 0, 1)'
+                            ],
+                            borderWidth: 1
                 }]
             };
 
-        // Create the chart
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: chartData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+                        // Create the chart
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: chartData,
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
             
         });
-    </script>
 
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="/static/startup/vendor/jquery/jquery.min.js"></script>
-    <script src="/static/startup/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                        
 
-    <!-- Core plugin JavaScript-->
-    <script src="/static/startup/vendor/jquery-easing/jquery.easing.min.js"></script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Line chart script goes here
+    var ctxLine = document.getElementById("line-chart").getContext('2d');
 
-    <!-- Custom scripts for all pages-->
-    <script src="/static/startup/js/sb-admin-2.min.js"></script>
+    // Set the width and height of the canvas
+    document.getElementById("line-chart").width = 800; // Set your desired width
+    document.getElementById("line-chart").height = 500; // Set your desired height
+    
+    var lineChartData = {
+        labels: {{ saless | safe }},
+        datasets: [{
+            data: {{ mauzo_date | safe }},
+            label: "Total Sales",
+            borderColor: "#3e95cd",
+            fill: false
+        }]
+    };
 
-    <!-- Page level plugins -->
-    <script src="/static/startup/vendor/chart.js/Chart.min.js"></script>
+    // Create the line chart
+    var myLineChart = new Chart(ctxLine, {
+        type: 'line',
+        data: lineChartData,
+        options: {
+            title: {
+                display: true,
+                text: 'Sales information per day'
+            }
+        }
+    });
+});
 
-    <!-- Page level custom scripts -->
-    <script src="/static/startup/js/demo/chart-area-demo.js"></script>
-    <script src="/static/startup/js/demo/chart-pie-demo.js"></script>
+                    </script>
+
+
+                    <!-- Bootstrap core JavaScript-->
+                    <script src="/static/startup/vendor/jquery/jquery.min.js"></script>
+                    <script src="/static/startup/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+                    <!-- Core plugin JavaScript-->
+                    <script src="/static/startup/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+                    <!-- Custom scripts for all pages-->
+                    <script src="/static/startup/js/sb-admin-2.min.js"></script>
+
+                    <!-- Page level plugins -->
+                    <script src="/static/startup/vendor/chart.js/Chart.min.js"></script>
+
+                    <!-- Page level custom scripts -->
+                    <script src="/static/startup/js/demo/chart-area-demo.js"></script>
+                    <script src="/static/startup/js/demo/chart-pie-demo.js"></script>
 
 
 
